@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- doc: http://wiki.ros.org/catkin/package.xml -->
+<package format="2">
+  <name>roswifibot</name>
+  <version>0.0.0</version>
+  <description>
+    ROS Driver for Wifibot lab mobile robot.
+    It is based on low-level "libwifibot" driver, wrapped within this ROS package.
+    This package is a fork of the original "roswifibot" package, available on SourceForge.
+    The fork has been ported to catkin and maintained with recent versions of ROS.
+  </description>
+  <author>claire, jean-charles</author>
+  <maintainer email="arnaud.a.ramey@gmail.com">Arnaud Ramey</maintainer>
+  <license>BSD</license>
+  <!-- dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>message_generation</depend>
+  <depend>std_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>tf</depend>
+  <export>
+    <rosdoc config="rosdoc.yaml" /> <!-- http://wiki.ros.org/rosdoc_lite -->
+  </export>
+</package>

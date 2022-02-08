@@ -1,0 +1,25 @@
+<launch>
+<arg name="robot"/>
+<group ns="$(arg robot)">
+  <!-- sudo chmod a+rwx /dev/ttyS* /dev/ttyACM* ; sh Arret_WifibotServer.sh
+  -->
+
+  <!-- Wifibot low level driver -->
+  <node pkg="roswifibot" type="wifibot_node" name="wifibot_node" required="true"
+        output="screen"
+        args="_port:=/dev/ttyUSB0
+              _base_frame:=$(arg robot)_base_frame
+              _odom_frame:=$(arg robot)_odom
+              _entrax:=.39
+              _relay1:=true
+              _relay2:=true
+              _relay3:=true"/>
+  <!-- metric speeds to motor ticks conversion -->
+  <!--
+  <remap from= "/twist_in" to="/cmd_vel" />
+  <remap from="/ticks_out" to="/cmd_speed" />
+  <node pkg="roswifibot" type="ros_speeds2ticks" name="ros_speed2ticks"
+        output="screen"/>
+  -->
+</group>
+</launch>
