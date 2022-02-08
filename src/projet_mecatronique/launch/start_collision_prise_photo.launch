@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+    <arg name="simulated_camera" default="false" />
+    <arg name="camera_pan_angle" default="-0.605" />
+    <arg name="mode" default="get_data" />
+    <arg name="device_to_use" default="cpu" />
+    <arg name="csi_camera" default="false" />
+    <arg name="plot_images" default="true" />
+
+
+
+    <node   name="training_node"
+            pkg="projet_mecatronique"
+            type="training.py"
+            respawn="false"
+            output="screen"
+            args="$(arg simulated_camera) $(arg camera_pan_angle) $(arg mode) $(arg device_to_use) $(arg csi_camera) $(arg plot_images)">
+    </node>
+
+    <node   name="simplegui_node"
+            pkg="projet_mecatronique"
+            type="simplegui.py"
+            respawn="false"
+            output="screen"
+            args="">
+    </node>
+
+</launch>
